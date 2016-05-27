@@ -1,0 +1,40 @@
+{
+	"version": 0,
+	"dependencies": [
+		{
+			"importpath": "github.com/SermoDigital/jose",
+			"repository": "https://github.com/SermoDigital/jose",
+			"vcs": "git",
+			"revision": "fa74c9f8b6a7bf513e12d9447b1669f68991198c",
+			"branch": "master",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/stretchr/testify/assert",
+			"repository": "https://github.com/stretchr/testify",
+			"vcs": "git",
+			"revision": "8d64eb7173c7753d6419fd4a9caf057398611364",
+			"branch": "master",
+			"path": "/assert",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/stretchr/testify/vendor/github.com/davecgh/go-spew/spew",
+			"repository": "https://github.com/stretchr/testify",
+			"vcs": "git",
+			"revision": "8d64eb7173c7753d6419fd4a9caf057398611364",
+			"branch": "master",
+			"path": "vendor/github.com/davecgh/go-spew/spew",
+			"notests": true
+		},
+		{
+			"importpath": "github.com/stretchr/testify/vendor/github.com/pmezard/go-difflib/difflib",
+			"repository": "https://github.com/stretchr/testify",
+			"vcs": "git",
+			"revision": "8d64eb7173c7753d6419fd4a9caf057398611364",
+			"branch": "master",
+			"path": "vendor/github.com/pmezard/go-difflib/difflib",
+			"notests": true
+		}
+	]
+}
