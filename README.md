@@ -73,6 +73,7 @@ To-Do List
 - [ ] implement support for Realtime Database access
 - [ ] add sample
 - [ ] support for godoc 
+- [ ] remove dependency on JWT library [jose][4] to keep the SDK lean (low priority)
 
 Developed By
 ------------
@@ -99,3 +100,4 @@ LICENSE
 [1]: https://firebase.google.com/docs/reference/serverreference/packages
 [2]: https://firebase.google.com/docs/reference/node/
 [3]: https://firebase.google.com/console/ 
+[4]: https://github.com/SermoDigital/jose
