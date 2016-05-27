@@ -5,7 +5,9 @@ This is the Firebase Server SDK written in Golang.
 
 Note that this is not an official SDK written by Google/Firebase.  Firebase only
 offers the Server SDK in [Java][1] and [Node.js][2].  This is simply an attempt to
-implement the Firebase Server SDK by reverse engineering the official ones.
+implement the Firebase Server SDK by reverse engineering the official ones.  If
+you decide to use this SDK, be warned that you may need to migrate at some point
+in the future when Google decides to release an official go SDK.
 
 This SDK, like its Java and Node counterparts, supports the following functions
 needed on the application server:
