@@ -50,10 +50,8 @@ func GetAuthWithApp(app *App) (*Auth, error) {
 // The developer claims are optional, additional claims to be stored in the
 // token.  The claims must be serializable to JSON.
 func (a *Auth) CreateCustomToken(uid string, developerClaims *Claims) (string, error) {
-	if a.app.options.ServiceAccountCredential == nil {
-		if err := a.app.options.ensureServiceAccount(); err != nil {
-			return "", err
-		}
+	if err := a.app.options.ensureServiceAccount(); err != nil {
+		return "", err
 	}
 	c := a.app.options.ServiceAccountCredential
 	return createSignedCustomAuthTokenForUser(uid, developerClaims, c.ClientEmail, c.PrivateKey)
@@ -70,10 +68,8 @@ func (a *Auth) CreateCustomToken(uid string, developerClaims *Claims) (string, e
 // and it was issued for the project associated with this Auth instance
 // (which by default is extracted from your service account).
 func (a *Auth) VerifyIDToken(tokenString string) (*Token, error) {
-	if a.app.options.ServiceAccountCredential == nil {
-		if err := a.app.options.ensureServiceAccount(); err != nil {
-			return nil, err
-		}
+	if err := a.app.options.ensureServiceAccount(); err != nil {
+		return nil, err
 	}
 	projectID := a.app.options.ServiceAccountCredential.ProjectID
 	return verify(projectID, tokenString)
