@@ -17,7 +17,7 @@ const clientCertURL = "https://www.googleapis.com/robot/v1/metadata/x509/securet
 // defaultAcceptableExpSkew is the default expiry leeway.
 const defaultAcceptableExpSkew = 300 * time.Second
 
-func verify(projectId, tokenString string) (*Token, error) {
+func verify(projectID, tokenString string) (*Token, error) {
 	decodedJWT, err := jws.ParseJWT([]byte(tokenString))
 	if err != nil {
 		return nil, err
@@ -44,6 +44,12 @@ func verify(projectId, tokenString string) (*Token, error) {
 		[]crypto.SigningMethod{crypto.SigningMethodRS256},
 		&jws.SigningOpts{Number: 1, Indices: []int{0}})
 	if err != nil {
+		return nil, err
+	}
+
+	ks, _ := keys(decodedJWS)
+	key := ks[0]
+	if err := decodedJWT.Validate(key, crypto.SigningMethodRS256, validator(projectID)); err != nil {
 		return nil, err
 	}
 
