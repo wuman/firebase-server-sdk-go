@@ -17,9 +17,9 @@ needed on the application server:
     Firebase apps.
   * Verify ID tokens, which are used to pass the signed-in user from a client app
     to a backend server.
-- Realtime Database (Not implemented yet)
-  * Save data.
-  * Retrieve data.
+- Realtime Database
+  * Will not be implemented because one can already use [firego][5] or
+    [Go Firebase][6], which are based on the Firebase [REST API][7].
 
 Initialize Firebase
 -------------------
@@ -29,12 +29,8 @@ with your service account credentials, you can initialize the SDK with this
 code snippet:
 
     firebase.InitializeApp(&firebase.Options{
-    	DatabaseURL: "http://databaseName.firebaseio.com",
     	ServiceAccountPath: "path/to/serviceAccountCredentials.json",
     })
-
-You can find your database name on the Database page of your Firebase console
-project.
 
 Create Custom Tokens
 --------------------
@@ -70,7 +66,6 @@ the method decodes the ID Token.
 To-Do List
 ----------
 
-- [ ] implement support for Realtime Database access
 - [ ] add sample
 - [ ] support for godoc 
 - [ ] remove dependency on JWT library [jose][4] to keep the SDK lean (low priority)
@@ -101,3 +96,6 @@ LICENSE
 [2]: https://firebase.google.com/docs/reference/node/
 [3]: https://firebase.google.com/console/ 
 [4]: https://github.com/SermoDigital/jose
+[5]: https://github.com/zabawaba99/firego
+[6]: https://github.com/JustinTulloss/firebase
+[7]: https://firebase.google.com/docs/reference/rest/database/

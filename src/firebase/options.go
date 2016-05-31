@@ -8,10 +8,6 @@ import (
 
 // Options is storage for configurable Firebase options.
 type Options struct {
-	// DatabaseURL is the database root URL, e.g. @"http://abc-xyz-123.firebaseio.com".
-	DatabaseURL string
-	// DatabaseAuthVariableOverride is the auth variable to be used by database rules.
-	DatabaseAuthVariableOverride map[string]interface{}
 	// ServiceAccountPath is the path to load the Service Account.
 	ServiceAccountPath string
 	// ServiceAccountCredential is the credential for the Service Account.
