@@ -1,7 +1,8 @@
 Firebase Server SDK for Golang
 ==============================
 
-This is the Firebase Server SDK written in Golang.
+This is the Server SDK written in Golang for the 2016 newly announced Firebase
+suite of services.
 
 Note that this is not an official SDK written by Google/Firebase.  Firebase only
 offers the Server SDK in [Java][1] and [Node.js][2].  This is simply an attempt to
