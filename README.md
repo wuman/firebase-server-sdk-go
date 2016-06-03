@@ -22,6 +22,19 @@ needed on the application server:
   * Will not be implemented because one can already use [firego][5] or
     [Go Firebase][6], which are based on the Firebase [REST API][7].
 
+Installation
+------------
+
+Install the package with go:
+
+    go get github.com/wuman/firebase-server-sdk-go
+
+Import the package to your go file:
+
+    import (
+    	firebase "github.com/wuman/firebase-server-sdk-go"
+    )
+
 Initialize Firebase
 -------------------
 
