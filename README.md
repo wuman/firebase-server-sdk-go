@@ -35,6 +35,11 @@ Import the package to your go file:
     	firebase "github.com/wuman/firebase-server-sdk-go"
     )
 
+Documentation
+-------------
+
+You can find documentation on [godoc.org][8].
+
 Initialize Firebase
 -------------------
 
@@ -81,7 +86,6 @@ To-Do List
 ----------
 
 - [ ] add sample
-- [ ] support for godoc 
 - [ ] remove dependency on JWT library [jose][4] to keep the SDK lean (low priority)
 
 Developed By
@@ -113,3 +117,4 @@ LICENSE
 [5]: https://github.com/zabawaba99/firego
 [6]: https://github.com/JustinTulloss/firebase
 [7]: https://firebase.google.com/docs/reference/rest/database/
+[8]: https://godoc.org/github.com/wuman/firebase-server-sdk-go
