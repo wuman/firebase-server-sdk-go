@@ -29,7 +29,7 @@ func verify(projectID, tokenString string) (*Token, error) {
 
 	keys := func(j jws.JWS) ([]interface{}, error) {
 		certs := &Certificates{URL: clientCertURL}
-		kid, ok := j.Header().Get("kid").(string)
+		kid, ok := j.Protected().Get("kid").(string)
 		if !ok {
 			return nil, errors.New("Firebase Auth ID Token has no 'kid' claim")
 		}
