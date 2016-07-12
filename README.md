@@ -85,6 +85,7 @@ the method decodes the ID Token.
 To-Do List
 ----------
 
+- [ ] add travis CI
 - [ ] add sample
 - [ ] remove dependency on JWT library [jose][4] to keep the SDK lean (low priority)
 
