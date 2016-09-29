@@ -20,7 +20,9 @@ needed on the application server:
     to a backend server.
 - Realtime Database
   * Will not be implemented because one can already use [firego][5] or
-    [Go Firebase][6], which are based on the Firebase [REST API][7].
+    [Go Firebase][6], which are based on the Firebase [REST API][7].  Note that
+    if you use firego, I recommend using my [forked branch][9], which allows you
+    to use the [application default token source][10] (which refreshes itself).
 
 Installation
 ------------
@@ -119,3 +121,5 @@ LICENSE
 [6]: https://github.com/JustinTulloss/firebase
 [7]: https://firebase.google.com/docs/reference/rest/database/
 [8]: https://godoc.org/github.com/wuman/firebase-server-sdk-go
+[9]: https://github.com/wuman/firego/tree/service-account-access-token
+[10]: https://developers.google.com/identity/protocols/application-default-credentials
