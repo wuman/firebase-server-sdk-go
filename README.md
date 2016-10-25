@@ -19,8 +19,10 @@ needed on the application server:
   * Verify ID tokens, which are used to pass the signed-in user from a client app
     to a backend server.
 - Realtime Database
-  * Will not be implemented because one can already use [firego][5] or
-    [Go Firebase][6], which are based on the Firebase [REST API][7].  Note that
+  * This is a lot more involved so stay tuned.
+  * For now you can use [firego][5] or [Go Firebase][6], which are based on the
+    Firebase [REST API][7].  These libraries are not real-time but they will
+    allow you to read from and write to the Firebase database.  Note that
     if you use firego, I recommend using my [forked branch][9], which allows you
     to use the [application default token source][10] (which refreshes itself).
 
