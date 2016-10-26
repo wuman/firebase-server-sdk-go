@@ -25,6 +25,11 @@ needed on the application server:
     allow you to read from and write to the Firebase database.  Note that
     if you use firego, I recommend using my [forked branch][9], which allows you
     to use the [application default token source][10] (which refreshes itself).
+- Cloud Messaging (FCM)
+  * This is not offered even in the official Server SDKs, but it would be
+    convenient to include this feature.
+  * If you wish to use a separate client library for this feature, you can try
+    [wuman/go-gcm][11] or [google/go-gcm][12].
 
 Installation
 ------------
@@ -125,3 +130,5 @@ LICENSE
 [8]: https://godoc.org/github.com/wuman/firebase-server-sdk-go
 [9]: https://github.com/wuman/firego/tree/service-account-access-token
 [10]: https://developers.google.com/identity/protocols/application-default-credentials
+[11]: https://github.com/wuman/go-gcm
+[12]: https://github.com/google/go-gcm
