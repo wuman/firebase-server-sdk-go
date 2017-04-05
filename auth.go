@@ -1,6 +1,9 @@
 package firebase
 
-import "sync"
+import (
+	"net/http"
+	"sync"
+)
 
 var authInstances = struct {
 	sync.Mutex
@@ -68,9 +71,17 @@ func (a *Auth) CreateCustomToken(uid string, developerClaims *Claims) (string, e
 // and it was issued for the project associated with this Auth instance
 // (which by default is extracted from your service account).
 func (a *Auth) VerifyIDToken(tokenString string) (*Token, error) {
+	return a.VerifyIDTokenWithTransport(tokenString, nil)
+}
+
+// VerifyIDToken parses and verifies a Firebase ID Token.
+//
+// Same as VerifyIDToken but with the possibility to define the Transport to be use by http.Client
+// This have to be use in Google App Engine standard environment with the fetchUrl transport.
+func (a *Auth) VerifyIDTokenWithTransport(tokenString string, transport http.RoundTripper) (*Token, error) {
 	if err := a.app.options.ensureServiceAccount(); err != nil {
 		return nil, err
 	}
 	projectID := a.app.options.ServiceAccountCredential.ProjectID
-	return verify(projectID, tokenString)
+	return verify(projectID, tokenString, transport)
 }

@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"time"
 
+	"net/http"
+
 	"github.com/SermoDigital/jose/crypto"
 	"github.com/SermoDigital/jose/jws"
 	"github.com/SermoDigital/jose/jwt"
@@ -17,7 +19,7 @@ const clientCertURL = "https://www.googleapis.com/robot/v1/metadata/x509/securet
 // defaultAcceptableExpSkew is the default expiry leeway.
 const defaultAcceptableExpSkew = 300 * time.Second
 
-func verify(projectID, tokenString string) (*Token, error) {
+func verify(projectID, tokenString string, transport http.RoundTripper) (*Token, error) {
 	decodedJWT, err := jws.ParseJWT([]byte(tokenString))
 	if err != nil {
 		return nil, err
@@ -28,7 +30,8 @@ func verify(projectID, tokenString string) (*Token, error) {
 	}
 
 	keys := func(j jws.JWS) ([]interface{}, error) {
-		certs := &Certificates{URL: clientCertURL}
+		certs := &Certificates{URL: clientCertURL, Transport: transport}
+
 		kid, ok := j.Protected().Get("kid").(string)
 		if !ok {
 			return nil, errors.New("Firebase Auth ID Token has no 'kid' claim")
